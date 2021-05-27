@@ -27,7 +27,19 @@ public class TestH2 {
         s.addBatch("insert into CLIENTES values ('Jannette Darlene','Velasquez','Vasquez','Camps Blancs 84')");
         s.addBatch("insert into CLIENTES values ('Darlene Arely','Velasquez','Vasquez','Camps Blancs 84')");
         s.addBatch("insert into CLIENTES values ('Maria','Gonzalez','Velasquez','Camps Blancs 84')");
-        ///Esto es un amodificación que yo he añadido
+        s.execute("create table CLIENTES(nombre varchar(50), ape1 varchar(50), ape2 varchar(50), direccion varchar(120))");
+        s.addBatch("insert into CLIENTES values ('Jose Miguel','Gonzalez','Ayala','Camps Blancs 84')");
+        s.addBatch("insert into CLIENTES values ('Jannette Darlene','Velasquez','Vasquez','Camps Blancs 84')");
+        s.addBatch("insert into CLIENTES values ('Darlene Arely','Velasquez','Vasquez','Camps Blancs 84')");
+        s.addBatch("insert into CLIENTES values ('Maria','Gonzalez','Velasquez','Camps Blancs 84')");
+        s.addBatch("insert into CLIENTES values ('Jose Miguel','Gonzalez','Ayala','Camps Blancs 84')");
+        s.addBatch("insert into CLIENTES values ('Jannette Darlene','Velasquez','Vasquez','Camps Blancs 84')");
+        s.addBatch("insert into CLIENTES values ('Darlene Arely','Velasquez','Vasquez','Camps Blancs 84')");
+        s.addBatch("insert into CLIENTES values ('Maria','Gonzalez','Velasquez','Camps Blancs 84')");
+        s.addBatch("insert into CLIENTES values ('Jose Miguel','Gonzalez','Ayala','Camps Blancs 84')");
+        s.addBatch("insert into CLIENTES values ('Jannette Darlene','Velasquez','Vasquez','Camps Blancs 84')");
+        s.addBatch("insert into CLIENTES values ('Darlene Arely','Velasquez','Vasquez','Camps Blancs 84')");
+        s.addBatch("insert into CLIENTES values ('Maria','Gonzalez','Velasquez','Camps Blancs 84')");
         int[] countWithoutException = s.executeBatch();
         System.out.println("Inserted = " + countWithoutException.length);
         PreparedStatement ps=connection.prepareStatement("select * from CLIENTES order by 3 desc");
